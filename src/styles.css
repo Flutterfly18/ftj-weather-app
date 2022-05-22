@@ -1,0 +1,86 @@
+/* Overall content container */
+
+.weatherAppContainer {
+  border: 5px solid black;
+  border-radius: 20px;
+  padding: 50px;
+  margin: 20px;
+  max-width: 648px;
+  max-height: 700px;
+  background-color: rgba(45, 72, 76, 0.4);
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+/* top section */
+
+h1 {
+  padding-left: 33px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.weatherAppDate {
+  display: block;
+  padding: 18px;
+  text-align: center;
+  font-weight: bolder;
+}
+
+/* form CSS */
+
+form {
+  width: 95%;
+}
+.btn-first {
+  background-color: #628ee4 !important;
+  color: aliceblue !important;
+  transition: all 200ms ease;
+  cursor: pointer;
+}
+.btn-first:hover {
+  background: white !important;
+  color: #628ee4 !important;
+  border: 1px solid #628ee4 !important;
+}
+.btn-second {
+  background-color: #6c7d9d !important;
+  color: aliceblue !important;
+  transition: all 200ms ease;
+  cursor: pointer;
+}
+.btn-second:hover {
+  background: white !important;
+  color: #6c7d9d !important;
+  border: 1px solid #6c7d9d !important;
+}
+
+/* Search results information */
+
+.cityTempEmoji {
+  display: block;
+  text-align: center;
+}
+
+.celsius {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+
+.fahrenheit {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+
+/* signature (outside of overall container) */
+
+.signature {
+  display: block;
+  text-align: right;
+  padding-right: 5px;
+  font-family: fantasy;
+  max-width: 648px;
+  max-height: 600px;
+}
