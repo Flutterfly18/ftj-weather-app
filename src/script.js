@@ -71,11 +71,9 @@ function displayTimeAndDate() {
   weatherAppDate.innerHTML = `${day} | ${month} ${date} ${year} | ${formattedHours}:${formattedMinutes}:${formattedSeconds} ${timeOfDay}`;
 }
 
-// Show wind speed API
-
 // Get "Check any city" API
 
-https: function search(event) {
+function search(event) {
   event.preventDefault();
   let cityInput = document.querySelector("#city-input");
   let city = document.querySelector("#city");
@@ -94,7 +92,7 @@ function showTemperature(response) {
   weatherDescription.innerHTML = response.data.weather[0].description;
   let weatherIcon = document.querySelector("#city-temp-emoji");
   let weatherIconUrl = `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`;
-  weatherIcon.innerHTML = `<img src = ${weatherIconUrl} />`;
+  weatherIcon.innerHTML = `<img src = "${weatherIconUrl}" />`;
 
   // Convert displayed temperature to Fahrenheit
 
