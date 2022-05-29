@@ -5,7 +5,7 @@
   border-radius: 20px;
   padding: 50px;
   margin: 20px;
-  max-width: 648px;
+  max-width: 1848px;
   max-height: 700px;
   background-color: rgba(45, 72, 76, 0.4);
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
@@ -72,6 +72,60 @@ form {
   text-decoration: none;
   color: black;
   cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+}
+
+.forecast-0 {
+  display: block;
+  padding-left: 30px;
+}
+
+.forecast-1 {
+  display: block;
+  padding-left: 30px;
+}
+
+.forecast-2 {
+  display: block;
+  padding-left: 30px;
+}
+
+.forecast-3 {
+  display: block;
+  padding-left: 30px;
+}
+
+.forecast-4 {
+  display: block;
+  padding-left: 30px;
+}
+
+.temp-0 {
+  display: block;
+  padding-left: 21px;
+}
+
+.temp-1 {
+  display: block;
+  padding-left: 21px;
+}
+
+.temp-2 {
+  display: block;
+  padding-left: 21px;
+}
+
+.temp-3 {
+  display: block;
+  padding-left: 21px;
+}
+
+.temp-4 {
+  display: block;
+  padding-left: 21px;
 }
 
 /* signature (outside of overall container) */

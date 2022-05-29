@@ -71,6 +71,37 @@ function displayTimeAndDate() {
   weatherAppDate.innerHTML = `${day} | ${month} ${date} ${year} | ${formattedHours}:${formattedMinutes}:${formattedSeconds} ${timeOfDay}`;
 }
 
+// show forcast
+
+function showForecast(response) {
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  response.data.daily.forEach(function (day, i) {
+    if (i < 5) {
+      let date = new Date();
+      let iconElement = document.querySelector(`#weather-icon-${i}`);
+      let tempElement = document.querySelector(`#weather-temp-${i}`);
+      let forecastElement = document.querySelector(`#forecast-${i}`);
+      let weatherIconUrl = `http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`;
+
+      date.setDate(date.getDate() + i + 1);
+
+      tempElement.innerHTML = `${Math.round(day.temp.day)}ºC`;
+      iconElement.innerHTML = `<img src = "${weatherIconUrl}" />`;
+      forecastElement.innerHTML = days[date.getDay()];
+    }
+  });
+  console.log(response);
+}
+
+// Get Forecast
+
+function getForecast(coordinates) {
+  let apiKey = "296bbd25cf751626773497b46903a318";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showForecast);
+}
+
 // Get "Check any city" API
 
 function search(event) {
@@ -83,6 +114,10 @@ function search(event) {
   axios.get(`${apiUrl}&appid=${apiKey}`).then(showTemperature);
 }
 function showTemperature(response) {
+  // display forecast - within showTemp Function
+
+  // get check any city response - original function
+
   let temperature = Math.round(response.data.main.temp);
   let cityTemp = document.querySelector("#city-temp");
   cityTemp.innerHTML = temperature;
@@ -93,6 +128,10 @@ function showTemperature(response) {
   let weatherIcon = document.querySelector("#city-temp-emoji");
   let weatherIconUrl = `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`;
   weatherIcon.innerHTML = `<img src = "${weatherIconUrl}" />`;
+
+  // get forcast - within showTemp function
+
+  getForecast(response.data.coord);
 
   // Convert displayed temperature to Fahrenheit
 
