@@ -133,7 +133,6 @@ img {
 .signature {
   display: block;
   text-align: right;
-  padding-right: 5px;
   font-family: fantasy;
   max-width: 648px;
   max-height: 600px;
