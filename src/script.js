@@ -71,7 +71,7 @@ function displayTimeAndDate() {
   weatherAppDate.innerHTML = `${day} | ${month} ${date} ${year} | ${formattedHours}:${formattedMinutes}:${formattedSeconds} ${timeOfDay}`;
 }
 
-// show forcast
+// show forecast metric
 
 function showForecast(response) {
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
@@ -114,10 +114,6 @@ function search(event) {
   axios.get(`${apiUrl}&appid=${apiKey}`).then(showTemperature);
 }
 function showTemperature(response) {
-  // display forecast - within showTemp Function
-
-  // get check any city response - original function
-
   let temperature = Math.round(response.data.main.temp);
   let cityTemp = document.querySelector("#city-temp");
   cityTemp.innerHTML = temperature;
@@ -193,6 +189,8 @@ function showCurrentTemperature(response) {
   let weatherIcon = document.querySelector("#city-temp-emoji");
   let weatherIconUrl = `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`;
   weatherIcon.innerHTML = `<img src = ${weatherIconUrl} />`;
+
+  getForecast(response.data.coord);
 
   // Convert displayed current location temperature to Fahrenheit (inside showCurrentTemperature function)
 
